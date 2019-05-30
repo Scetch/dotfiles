@@ -184,14 +184,16 @@ bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset 'Master' 
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset 'Master' 1%+
 
 # Rofi
-bindsym $mod+d mode "launch"
+bindsym $mod+d exec --no-startup-id rofi -theme Monokai -show drun 
 
-mode "launch" {
-    bindsym w exec --no-startup-id rofi -show window; mode "default"
-    bindsym r exec --no-startup-id rofi -show run; mode "default"
-    # bindsym k exec --no-startup-id rofi -show keys; mode "default"
-    # bindsym d exec --no-startup-id rofi -show drun; mode "default"
-}
+#bindsym $mod+d mode "launch"
+
+#mode "launch" {
+#    bindsym w exec --no-startup-id rofi -show window; mode "default"
+#    bindsym r exec --no-startup-id rofi -show run; mode "default"
+#    # bindsym k exec --no-startup-id rofi -show keys; mode "default"
+#    # bindsym d exec --no-startup-id rofi -show drun; mode "default"
+#}
 
 # Polybar Reloading
 bindsym $mod+shift+p exec --no-startup-id $HOME/bin/start-polybar
