@@ -196,7 +196,7 @@ bindsym $mod+d exec --no-startup-id rofi -theme Monokai -show drun
 #}
 
 # Polybar Reloading
-bindsym $mod+shift+p exec --no-startup-id $HOME/bin/start-polybar
+bindsym $mod+shift+p exec --no-startup-id $HOME/.config/i3/bin/start-polybar
 
 # Flameshot keybind for screenshots
 bindsym Print exec --no-startup-id flameshot gui
@@ -207,5 +207,5 @@ exec --no-startup-id nitrogen --restore
 # Compositor
 exec --no-startup-id compton
 # Polybar
-exec --no-startup-id $HOME/bin/start-polybar
+exec --no-startup-id $HOME/.config/i3/bin/start-polybar
 
