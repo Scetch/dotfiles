@@ -395,12 +395,18 @@ menu-0-0 = REBOOT
 menu-0-0-exec = menu-open-1
 menu-0-1 = SHUTDOWN
 menu-0-1-exec = menu-open-2
+menu-0-2 = SUSPEND
+menu-0-2-exec = menu-open-3
+
 
 menu-1-0 = REBOOT
 menu-1-0-exec = systemctl reboot
 
 menu-2-0 = SHUTDOWN
 menu-2-0-exec = systemctl poweroff
+
+menu-3-0 = SUSPEND
+menu-3-0-exec = systemctl suspend
 
 [settings]
 screenchange-reload = true
