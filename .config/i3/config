@@ -204,8 +204,8 @@ bindsym Print exec --no-startup-id flameshot gui
 # Startup
 # Desktop Image
 exec --no-startup-id nitrogen --restore
-# Compositor
-exec --no-startup-id compton
 # Polybar
 exec --no-startup-id $HOME/.config/i3/bin/start-polybar
+# Compositor
+exec --no-startup-id compton -CGb
 
