@@ -5,6 +5,9 @@ return {
   },
   config = function()
     require('nvim-tree').setup({
+      update_focused_file = {
+          enable = true
+      },
       renderer = {
           root_folder_label = false,
           icons = {
