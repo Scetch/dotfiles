@@ -12,6 +12,7 @@ return {
             'rust_analyzer',
             'lua_ls',
             'ts_ls',
+            'clangd',
         }
       }
     },
@@ -51,6 +52,9 @@ return {
             capabilities = capabilities
         }
         lspconfig['ts_ls'].setup {
+            capabilities = capabilities
+        }
+        lspconfig['clangd'].setup {
             capabilities = capabilities
         }
       end
