@@ -13,6 +13,7 @@ return {
             'lua_ls',
             'ts_ls',
             'clangd',
+            'cmake',
         }
       }
     },
@@ -55,6 +56,9 @@ return {
             capabilities = capabilities
         }
         lspconfig['clangd'].setup {
+            capabilities = capabilities
+        }
+        lspconfig['cmake'].setup {
             capabilities = capabilities
         }
       end

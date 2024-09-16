@@ -16,7 +16,8 @@ return {
         'yaml',
         'gitignore',
         'lua',
-        'bash'
+        'bash',
+        'cmake',
     },
     highlight = {
       enable = true
