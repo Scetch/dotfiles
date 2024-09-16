@@ -19,3 +19,5 @@ opt.wrap = true
 
 opt.cursorline = true
 opt.termguicolors = true
+
+opt.clipboard = 'unnamedplus'
