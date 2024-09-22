@@ -7,6 +7,7 @@ vim.diagnostic.config {
 
 vim.keymap.set('n', '<leader>p', '"+p')
 vim.keymap.set('n', '<leader>P', '"+P')
+vim.keymap.set('n', '<leader>s', '<cmd>lua vim.lsp.buf.format({ async = true })<CR>')
 
 opt.number = true
 
