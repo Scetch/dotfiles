@@ -23,6 +23,7 @@ return {
     keymap.set('n', '<leader>fs', '<cmd>Telescope live_grep<cr>', { desc = 'Fuzzy find string in cwd' })
     keymap.set('n', '<leader>fc', '<cmd>Telescope grep_string<cr>', { desc = 'Find string under cursor in cwd' })
     keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>', { desc = 'Fuzzy find buffers' })
+    keymap.set('n', '<leader>fd', '<cmd>Telescope diagnostics<cr>', { desc = 'Fuzzy find dianostics' })
     keymap.set('n', '<leader>ld', '<cmd>Telescope lsp_definitions<cr>', { desc = 'LSP Definitions' })
     keymap.set('n', '<leader>lr', '<cmd>Telescope lsp_references<cr>', { desc = 'LSP References' })
   end
