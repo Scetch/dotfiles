@@ -4,6 +4,8 @@ import = [
 ]
 
 [window]
+title = ""
+dynamic_title = false
 padding = { x = 8, y = 8 }
 
 [env]
