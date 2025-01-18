@@ -18,6 +18,7 @@ return {
         'lua',
         'bash',
         'cmake',
+        'zig',
     },
     highlight = {
       enable = true

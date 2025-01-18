@@ -14,6 +14,7 @@ return {
             'ts_ls',
             'clangd',
             'cmake',
+            'zls',
         }
       }
     },
@@ -59,6 +60,9 @@ return {
             capabilities = capabilities
         }
         lspconfig['cmake'].setup {
+            capabilities = capabilities
+        }
+        lspconfig['zls'].setup {
             capabilities = capabilities
         }
       end
