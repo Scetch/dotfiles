@@ -31,11 +31,12 @@ return {
             capabilities = capabilities,
             settings = {
                 ['rust-anayzer'] = {
-                    rust = {
-                      analyzerTargetDir = true,
+                    cargo = {
+                      targetDir = true,
+                      features = "all",
                     },
-                    checkOnSave = {
-                      command = 'clippy',
+                    check = {
+                        command = "clippy",
                     },
                     files = {
                       excludeDirs = {
