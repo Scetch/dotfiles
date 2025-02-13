@@ -6,66 +6,75 @@ return {
         end
     },
     {
-      'williamboman/mason-lspconfig.nvim',
-      opts = {
-        ensure_installed = {
-            'rust_analyzer',
-            'lua_ls',
-            'ts_ls',
-            'clangd',
-            'cmake',
-            'zls',
+        'williamboman/mason-lspconfig.nvim',
+        opts = {
+            ensure_installed = {
+                'rust_analyzer',
+                'lua_ls',
+                'ts_ls',
+                'clangd',
+                'cmake',
+                'zls',
+            }
         }
-      }
     },
     {
-      'neovim/nvim-lspconfig',
-      dependencies = {
-        'cmp-nvim-lsp'
-      },
-      config = function()
-        local lspconfig = require('lspconfig')
-        local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-        lspconfig['rust_analyzer'].setup {
-            capabilities = capabilities,
-            settings = {
-                ['rust-anayzer'] = {
-                    cargo = {
-                      targetDir = true,
-                      features = "all",
-                    },
-                    check = {
-                        command = "clippy",
-                    },
-                    files = {
-                      excludeDirs = {
-                          '.git',
-                          '.direnv',
-                          'target',
-                          'js',
-                          'node_modules',
-                      },
+        'mrcjkb/rustaceanvim',
+        version = '^5',
+        init = function()
+            vim.g.rustaceanvim = {
+                server = {
+                    default_settings = {
+                        ['rust-analyzer'] = {
+                            cargo = { allFeatures = true, targetDir = true },
+                            check = {
+                                allTargets = true,
+                                command = 'clippy',
+                            },
+                            diagnostics = {
+                                disabled = { 'inactive-code', 'unresolved-proc-macro' },
+                            },
+                            procMacro = { enable = true },
+                            flags = { exit_timeout = 100 },
+                            files = {
+                                excludeDirs = {
+                                    'target',
+                                    'node_modules',
+                                    '.direnv',
+                                    '.git',
+                                },
+                            },
+                        },
                     },
                 },
-            },
+            }
+        end,
+        lazy = false,
+    },
+    {
+        'neovim/nvim-lspconfig',
+        dependencies = {
+            'cmp-nvim-lsp'
+        },
+        config = function()
+            local lspconfig = require('lspconfig')
+            local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-        }
-        lspconfig['lua_ls'].setup {
-            capabilities = capabilities
-        }
-        lspconfig['ts_ls'].setup {
-            capabilities = capabilities
-        }
-        lspconfig['clangd'].setup {
-            capabilities = capabilities
-        }
-        lspconfig['cmake'].setup {
-            capabilities = capabilities
-        }
-        lspconfig['zls'].setup {
-            capabilities = capabilities
-        }
-      end
+            lspconfig['lua_ls'].setup {
+                capabilities = capabilities
+            }
+            lspconfig['ts_ls'].setup {
+                capabilities = capabilities
+            }
+            lspconfig['clangd'].setup {
+                capabilities = capabilities
+            }
+            lspconfig['cmake'].setup {
+                capabilities = capabilities
+            }
+            lspconfig['zls'].setup {
+                capabilities = capabilities
+            }
+        end
     },
 }
