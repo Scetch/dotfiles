@@ -14,8 +14,8 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.autoindent = true
 
-opt.cursorline = true
-opt.termguicolors = true
+vim.opt.cursorline = true
+vim.opt.termguicolors = true
 
 vim.opt.clipboard = 'unnamedplus'
 
