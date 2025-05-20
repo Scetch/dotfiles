@@ -15,7 +15,8 @@ return {
                 'clangd',
                 'cmake',
                 'zls',
-            }
+            },
+            automatic_enable = false
         }
     },
     {
