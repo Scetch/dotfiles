@@ -62,7 +62,18 @@ return {
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
             lspconfig['lua_ls'].setup {
-                capabilities = capabilities
+                capabilities = capabilities,
+                settings = {
+                    Lua = {
+                        diagnostics = {
+                            globals = { "vim" }
+                        },
+                        workspace = {
+                            checkThirdParty = false,
+                            library = { vim.env.VIMRUNTIME },
+                        },
+                    },
+                },
             }
             lspconfig['ts_ls'].setup {
                 capabilities = capabilities
