@@ -7,6 +7,8 @@ vim.keymap.set('n', '<leader>s', '<cmd>lua vim.lsp.buf.format({ async = true })<
 vim.keymap.set('n', '<leader>c', '<cmd>lua vim.lsp.buf.code_action()<CR>')
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>');
 
+vim.api.nvim_create_user_command('CopyPath', 'let @+ = expand("%")', {})
+
 vim.opt.number = true
 
 vim.opt.tabstop = 4
