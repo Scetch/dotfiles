@@ -1,6 +1,7 @@
 vim.g.mapleader = ' '
 vim.diagnostic.config {
-    update_in_insert = true
+    update_in_insert = true,
+    virtual_text = true,
 }
 
 vim.keymap.set('n', '<leader>s', '<cmd>lua vim.lsp.buf.format({ async = true })<CR>')
