@@ -14,7 +14,7 @@ return {
                 'ts_ls',
                 'clangd',
                 'cmake',
-                'zls',
+                'ruff',
             },
             automatic_enable = false
         }
@@ -58,10 +58,9 @@ return {
             'cmp-nvim-lsp'
         },
         config = function()
-            local lspconfig = require('lspconfig')
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-            lspconfig['lua_ls'].setup {
+            vim.lsp.config['lua_ls'] = {
                 capabilities = capabilities,
                 settings = {
                     Lua = {
@@ -75,18 +74,27 @@ return {
                     },
                 },
             }
-            lspconfig['ts_ls'].setup {
+            vim.lsp.enable('lua_ls')
+
+            vim.lsp.config['ts_ls'] = {
                 capabilities = capabilities
             }
-            lspconfig['clangd'].setup {
+            vim.lsp.enable('ts_ls')
+
+            vim.lsp.config['clangd'] = {
                 capabilities = capabilities
             }
-            lspconfig['cmake'].setup {
+            vim.lsp.enable('clangd')
+
+            vim.lsp.config['cmake'] = {
                 capabilities = capabilities
             }
-            lspconfig['zls'].setup {
+            vim.lsp.enable('cmake')
+
+            vim.lsp.config['ruff'] = {
                 capabilities = capabilities
             }
+            vim.lsp.enable('ruff')
         end
     },
 }
