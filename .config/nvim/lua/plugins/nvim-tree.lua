@@ -1,27 +1,44 @@
 return {
-  'nvim-tree/nvim-tree.lua',
-  dependencies = {
-    'nvim-tree/nvim-web-devicons',
-  },
-  config = function()
-    require('nvim-tree').setup({
-      update_focused_file = {
-          enable = true
-      },
-      renderer = {
-          root_folder_label = false,
-          icons = {
-            show = {
-                file = false
-            }
-          }
-      }
-    })
+    'nvim-tree/nvim-tree.lua',
+    dependencies = {
+        'nvim-tree/nvim-web-devicons',
+    },
+    config = function()
+        require('nvim-tree').setup({
+            git = {
+                enable = true
+            },
+            update_focused_file = {
+                enable = true
+            },
+            filters = {
+                custom = { '.git$' },
+            },
+            renderer = {
+                root_folder_label = false,
+                icons = {
+                    show = {
+                        file = false
+                    }
+                }
+            },
+            view = {
+                number = true,
+                width = 50,
+                float = {
+                    enable = true,
+                    open_win_config = {
+                        width = 50,
+                        relative = "win",
+                    }
+                },
+            },
+        })
 
-    local keymap = vim.keymap
+        local keymap = vim.keymap
 
-    keymap.set('n', '<leader>ee', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle file explorer' })
-    keymap.set('n', '<leader>ec', '<cmd>NvimTreeCollapse<CR>', { desc = 'Collapse file explorer' })
-    keymap.set('n', '<leader>er', '<cmd>NvimTreeRefresh<CR>', { desc = 'Refresh file explorer' })
-  end
+        keymap.set('n', '<leader>ee', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle file explorer' })
+        keymap.set('n', '<leader>ec', '<cmd>NvimTreeCollapse<CR>', { desc = 'Collapse file explorer' })
+        keymap.set('n', '<leader>er', '<cmd>NvimTreeRefresh<CR>', { desc = 'Refresh file explorer' })
+    end
 }
