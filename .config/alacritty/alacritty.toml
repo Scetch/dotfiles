@@ -6,8 +6,9 @@ import = [
 [window]
 title = ""
 dynamic_title = false
-padding = { x = 8, y = 8 }
+padding = { x = 8, y = 12 }
 option_as_alt = "Both"
+decorations = "Buttonless"
 
 [env]
 TERM = "xterm-256color"
