@@ -23,3 +23,5 @@ vim.opt.termguicolors = true
 vim.opt.clipboard = 'unnamedplus'
 
 vim.opt.scrolloff = 10
+
+vim.opt.mouse = ""
