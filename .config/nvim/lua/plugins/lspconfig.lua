@@ -15,6 +15,8 @@ return {
                 'clangd',
                 'cmake',
                 'ruff',
+                'pyright',
+                'zls',
             },
             automatic_enable = false
         }
@@ -60,7 +62,7 @@ return {
         config = function()
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-            vim.lsp.config['lua_ls'] = {
+            vim.lsp.config('lua_ls', {
                 capabilities = capabilities,
                 settings = {
                     Lua = {
@@ -73,28 +75,43 @@ return {
                         },
                     },
                 },
-            }
+            })
             vim.lsp.enable('lua_ls')
 
-            vim.lsp.config['ts_ls'] = {
+            vim.lsp.config('ts_ls', {
                 capabilities = capabilities
-            }
+            })
             vim.lsp.enable('ts_ls')
 
-            vim.lsp.config['clangd'] = {
+            vim.lsp.config('clangd', {
                 capabilities = capabilities
-            }
+            })
             vim.lsp.enable('clangd')
 
-            vim.lsp.config['cmake'] = {
+            vim.lsp.config('cmake', {
                 capabilities = capabilities
-            }
+            })
             vim.lsp.enable('cmake')
 
-            vim.lsp.config['ruff'] = {
+            vim.lsp.config('ruff', {
                 capabilities = capabilities
-            }
+            })
             vim.lsp.enable('ruff')
+
+            vim.lsp.config('pyright', {
+                capabilities = capabilities
+            })
+            vim.lsp.enable('pyright')
+
+            vim.lsp.config('html', {
+                capabilities = capabilities
+            })
+            vim.lsp.enable('html')
+
+            vim.lsp.config('zls', {
+                capabilities = capabilities
+            })
+            vim.lsp.enable('zls')
         end
     },
 }
