@@ -7,6 +7,10 @@ return {
 
     telescope.setup({
         defaults = {
+            file_ignore_patterns = {
+                '.git',
+                'node_modules',
+            },
             mappings = {
                 i = {
                     ['<C-k>'] = actions.move_selection_previous,
@@ -26,5 +30,7 @@ return {
     keymap.set('n', '<leader>fd', '<cmd>Telescope diagnostics<cr>', { desc = 'Fuzzy find dianostics' })
     keymap.set('n', '<leader>ld', '<cmd>Telescope lsp_definitions<cr>', { desc = 'LSP Definitions' })
     keymap.set('n', '<leader>lr', '<cmd>Telescope lsp_references<cr>', { desc = 'LSP References' })
+    keymap.set('n', '<leader>ls', '<cmd>Telescope lsp_document_symbols<cr>', { desc = 'LSP Document Symbols' })
+    keymap.set('n', '<leader>lw', '<cmd>Telescope lsp_workspace_symbols<cr>', { desc = 'LSP Workplace Symbols' })
   end
 }
