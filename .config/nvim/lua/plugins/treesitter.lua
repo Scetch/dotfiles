@@ -1,6 +1,8 @@
 return {
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
+  event = { 'BufReadPost', 'BufNewFile' },
+  main = 'nvim-treesitter.configs',
   opts = {
     ensure_installed = {
         'c',
@@ -19,6 +21,9 @@ return {
         'bash',
         'cmake',
         'zig',
+        'javascript',
+        'css',
+        'python',
     },
     highlight = {
       enable = true
